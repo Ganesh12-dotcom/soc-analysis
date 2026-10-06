@@ -1,0 +1,25 @@
+# Incident Report: 2026-09-11 Traffic Analysis Exercise
+
+## Executive Summary
+[Insert summary of the malware delivery, alerts, and C2 traffic based on the exercise background]
+
+## Victim & Environment Details
+| Asset Attribute | Identified Detail |
+| :--- | :--- |
+| **Hostname** | DESKTOP-6T17ZFM[cite: 4] |
+| **User Account** | qmcdowell (Gabriel McDowell)[cite: 4] |
+| **Victim IP Address** | 10.9.11.135[cite: 4] |
+| **Victim MAC Address** | 08:d4:0c:7a:29:1e[cite: 4] |
+| **Domain Controller** | [Insert Domain Controller Name/IP] |
+
+## Indicators of Compromise (IOCs)
+* **Malicious File Name:** [Insert File Name]
+* **SHA-256 Hash:** [Insert Hash]
+* **Attacker IP Address:** [Insert IP]
+* **C2 Traffic Port:** [Insert Port]
+
+## Investigation Methodology
+1. **Network Flow Analysis:** [Insert network flow findings].
+2. **Endpoint Identification:** Identified the host using the `browser.response_computer_name` filter, found the user account name using the `kerberos.cname_string == 1` filter, and extracted the user's full name using the `samr.samr_UserInfo21.full_name` filter[cite: 4].
+3. **Domain Controller Identification:** Utilized the `browser.command == 0x0f` filter to identify the domain controller[cite: 4].
+4. **Payload
